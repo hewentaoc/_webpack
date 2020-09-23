@@ -9,9 +9,9 @@
 
 # 找到对应路径
 
-  path.basename('/a/b/c/d/index.html') => index.html
-  path.basename('/a/b/c/d/index.html','.html') => index
-  path.extname(entry) 找到文件的扩展名.js
+- path.basename('/a/b/c/d/index.html') => index.html
+- path.basename('/a/b/c/d/index.html','.html') => index
+- path.extname(entry) 找到文件的扩展名.js
 
 
 # 深层次文件可以使用
