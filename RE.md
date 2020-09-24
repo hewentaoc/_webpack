@@ -9,3 +9,9 @@
 - 在打包过程中，仅仅是处理文件的依赖关系，不会执行文件
 
 - webpack.config.js是在node环境中进行执行的，仅支持node环境的语法解构
+
+# webpack流程图
+
+- https://www.yuque.com/u2102367/lzfa30/kigfgx/edit
+
+
