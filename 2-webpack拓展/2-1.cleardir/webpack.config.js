@@ -9,7 +9,6 @@ module.exports = {
     devtool: "source-map",
     output:{
         filename:'[name].[chunkhash:5].js',
-        path:__dirname + '/demo'
     },
     plugins:[
         new CleanWebpackPlugin(),

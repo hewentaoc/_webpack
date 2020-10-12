@@ -1,4 +1,7 @@
 console.log(333,__dirname)
+let path = require('path');
+let getPath = path.resolve('./');
+console.log(getPath)
 module.exports = {
     // entry:'./entry.js',
     entry:{//入口文件

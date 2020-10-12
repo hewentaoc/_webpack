@@ -1,6 +1,6 @@
 # webpack安装
 
-　npm install --save-dev webpack webpack-cli
+　npm install --save-dev(-D) webpack webpack-cli
 
 ## webpack：核心包，包含了webpack构建过程中要用到的所有api
 ## webpack-cli：提供一个简单的cli命令，它调用了webpack核心包的api，来完成构建过程

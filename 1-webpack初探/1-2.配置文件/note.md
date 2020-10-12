@@ -2,6 +2,11 @@
 
 - path: __dirname + '/dist'
 
+# 得到node运行的目录
+
+- 在webpack配置文件中，getPath代表node运行的目录
+- let getPath = path.resolve('./');
+
 # source-map
 
 - souce map 可以当运行发生错误的时候，我们更加希望能看到源代码中的错误，而不是转换后代码的错误
