@@ -31,3 +31,8 @@ __dirname + '/dist'
     path:
     filename:
  }
+
+name：chunkname
+hash: 总的资源hash，通常用于解决缓存问题
+chunkhash: 使用chunkhash
+id: 使用chunkid，不推荐
