@@ -17,7 +17,7 @@ module.exports = {
         //html文件展示在指定的目录中,默认是根目录
     },
     plugins: [
-        // new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
@@ -31,7 +31,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [{
                 from: './public',
-                // to: './'
+                to: './'
             }]
         }),
         // new CopyWebpackPlugin({
