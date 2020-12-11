@@ -1,10 +1,11 @@
 {
-  "name": "2-4.test",
+  "name": "2-7.demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack "
+    "dev": "webpack",
+    "build": "webpack --env prod"
   },
   "author": "",
   "license": "ISC",

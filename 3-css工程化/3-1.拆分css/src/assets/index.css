@@ -1,0 +1,7 @@
+.red {
+    width: 100px;
+    height: 100px;
+    /* background-color: red; */
+    background-image: url(./cry.png);
+    background-size: contain;
+}

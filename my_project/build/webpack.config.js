@@ -4,6 +4,8 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 const entrys = getEntryPath('vues/**/*.js')
+let files = glob.sync('vues/**/*.js');
+console.log(files)
 let config = {
     entry:entrys,
     output:{
