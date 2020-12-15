@@ -1,0 +1,19 @@
+{
+  "name": "learn-babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel ./src/index.js -o ./src/index.inline.js -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10"
+  },
+  "dependencies": {
+    "core-js": "^3.8.1"
+  }
+}
