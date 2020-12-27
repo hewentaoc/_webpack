@@ -1,9 +1,12 @@
 {
  "presets": [
     ["@babel/preset-env",{
-      "useBuiltIns": "usage",
+      "useBuiltIns": "usage",//对新的Api进行解析
       "corejs": 3
     }]
  ],
- "plugins": []
+ "plugins": [
+   "@babel/plugin-proposal-class-properties",//编译es7的语法,class中私有属性定义
+   "babel-plugin-transform-remove-console"//移除所有console.log
+ ]
 }
