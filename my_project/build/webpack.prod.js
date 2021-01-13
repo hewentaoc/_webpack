@@ -9,6 +9,7 @@ const prodConfig = {
     splitChunks: {
       //分包配置
       chunks: "all",
+      minSize:0,
       cacheGroups: {
         styles: {
           minSize: 0,

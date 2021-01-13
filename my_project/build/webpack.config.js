@@ -37,14 +37,12 @@ let config = {
                 use:[MiniCssExtractPlugin.loader,'css-loader','less-loader']
             },
             {
-                test:/\.(png) | (jpg)$/i,//不区分大小写
+                test:/\.(png)|(jpg)$/i,//不区分大小写
                 use:{
                     loader:'url-loader',
                     options:{
-                        options: {
-                            limit: 10 * 1024, //只要文件不超过 100*1024 字节，则使用base64编码，否则，交给file-loader进行处理
-                            name: "[name].[hash:5].[ext]",
-                        }, 
+                        limit:3000, //只要文件不超过3000 字节 = 3kb，则使用base64编码，否则，交给file-loader进行处理
+                        name: "img/[name].[hash:5].[ext]",
                     }
                 }
             }   
