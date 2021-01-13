@@ -49,8 +49,8 @@ let config = {
         ]
     },
     plugins:[
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin()
+       new CleanWebpackPlugin(),
+       new MiniCssExtractPlugin()
     ]
 }
 let entryName = Object.keys(entrys);

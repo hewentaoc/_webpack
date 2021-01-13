@@ -1,7 +1,7 @@
 {
  "presets": [
     ["@babel/preset-env",{
-      "useBuiltIns":false,
+      "useBuiltIns":false,//不对es6新的Api进行解析
       // "useBuiltIns": "usage",//对新的Api进行解析
       "corejs": 3
     }]

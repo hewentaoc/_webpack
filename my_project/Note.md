@@ -20,6 +20,24 @@
 - index:'./vues/index/index.js'
 
 
+# webpack文件配置
+
+1. 基本配置
+
+- 配置不同环境的webpack文件
+
+- 如何在让dev中loader覆盖base.config.js中loader
+
+- 是否添加post-css配置
+
+- publicPath: "/" 使用需要注意,会在各个文件引用之前拼接 publicPath
+
+- 自动分包问题
+
+
+
+
+
 ```js
   contentBase: path.resolve(__dirname, './'),//告诉服务器从哪里提供内容
   host: '0.0.0.0',

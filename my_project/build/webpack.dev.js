@@ -2,6 +2,7 @@ const {merge,mergeWithRules} = require("webpack-merge");
 const baseConfig = require("./webpack.config.js");
 const argv = require('yargs').argv; //获取packjson中传递的参数
 console.log(argv.env)
+//bashconfig中module
 let baseModule = {
     module:baseConfig.module
 }
@@ -42,10 +43,15 @@ let devConfig = {
             }
         }
     },
-    stats: 'none'
+    // stats: 'none'
+    stats:{    
+        modules: false, // 打包时不显示具体模块信息
+        entrypoints: false, // 打包时不显示入口模块信息
+        children: false, // 打包时不显示子模块信息
+    }
 };
 devConfig = merge(baseConfig, devConfig);
-// devConfig.module = curModule
+devConfig.module = curModule
 // console.dir(devConfig, {depth: 4})
 
 module.exports = devConfig
