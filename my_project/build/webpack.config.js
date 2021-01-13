@@ -4,12 +4,11 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 打包css文件 
 const glob = require('glob');
-let rootPath = path.resolve('./');//找到根目录　node运行的目录
+let rootPath = path.resolve('./');//根目录－node运行的目录
 const entrys = getEntryPath('vues/**/*.js')
 let files = glob.sync('vues/**/*.js');
 console.log(files)
 let config = {
-    devtool:'source-map',
     entry:entrys,
     output:{
         filename:'[name].js',
