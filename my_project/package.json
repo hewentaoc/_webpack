@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "webpack-dev-server build/webpack.dev.js --env.publicPath server",
-    "dev": "webpack --config build/webpack.dev.js --env.publicPath dev"
+    "server": "webpack-dev-server --config build/webpack.dev.js --env.publicPath server",
+    "dev": "webpack --config build/webpack.dev.js --env.publicPath dev",
+    "build": "webpack --config build/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^4.3.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.1",
     "webpack-merge": "^5.7.3"
