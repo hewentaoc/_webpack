@@ -14,6 +14,10 @@ let devModule = {
             {
                 test:/\.js$/,
                 use:['cache-loader','babel-loader']
+            },
+            {
+                test:/\.vue$/,
+                use:['cache-loader','vue-loader']//优化打包时间
             }
         ]
     }
@@ -36,12 +40,14 @@ let devConfig = {
     output: {
         filename: '[name].js',
         chunkFilename: '[name].chunk.js', //异步加载文件名称
-        publicPath: argv.env == 'dev' ? '' : '/dist/', //公共路径
+        // publicPath: argv.env == 'dev' ? '' : '/dist/', //公共路径
     },
     devServer: {
         port: 8000,
         hot: true, // 是否热更新，监听页面js、css变化
         open: true,// 自动打开浏览器
+        inline: true, //可以监控js变化
+        watchContentBase:true, //监听页面html变化
         proxy: {
             '/apm': {
                 target: 'http://preview.app.market.pt.xiaomi.com',

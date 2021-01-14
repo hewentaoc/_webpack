@@ -42,7 +42,7 @@
   contentBase: path.resolve(__dirname, './'),//告诉服务器从哪里提供内容
   host: '0.0.0.0',
   publicPath: '/dist/',// 设置资源文件路径
-  openPage:'html/'　默认打开的路径
+  openPage:'html/'　//默认打开的路径
   inline: true, //可以监控js变化
   port: 8000,
   hot: true, // 是否热更新，监听页面js、css变化

@@ -3,6 +3,7 @@ const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 打包css文件 
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const glob = require('glob');
 let rootPath = path.resolve('./');//根目录－node运行的目录
 let files = glob.sync('vues/**/*.js');
@@ -45,12 +46,17 @@ let config = {
                         name: "img/[name].[hash:5].[ext]",
                     }
                 }
-            }   
+            },
+            {
+                test:/\.vue$/,
+                use:['vue-loader']
+            }  
         ]
     },
     plugins:[
        new CleanWebpackPlugin(),
        new MiniCssExtractPlugin(),
+       new VueLoaderPlugin(),
        new HtmlWebpackPlugin({
          filename:"index.html",
          template:"./public/index.html",

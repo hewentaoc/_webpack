@@ -58,5 +58,5 @@ let devConfig = {
 
 devConfig = merge(baseConfig, devConfig);
 devConfig.module = curModule
-// console.dir(devConfig, {depth: 4})
+console.dir(devConfig, {depth: 4})
 module.exports = devConfig

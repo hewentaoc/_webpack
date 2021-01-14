@@ -1,16 +1,10 @@
 import Vue from 'vue'
-
+import App from './App.vue';
 
 let app = new Vue({
     el:'#app',
-    render: function (createElement) {
-        return <div>123</div>
-    },
-    mounted:function(){
-      
-    },
-    components:{
-
+    render: function (h) {
+        return <App></App>
     }
 })
 console.log(app)
