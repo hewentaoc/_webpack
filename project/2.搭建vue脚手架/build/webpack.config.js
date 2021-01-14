@@ -5,11 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 打包css文件 
 const glob = require('glob');
 let rootPath = path.resolve('./');//根目录－node运行的目录
-const entrys = getEntryPath('vues/**/*.js')
 let files = glob.sync('vues/**/*.js');
 console.log(files)
 let config = {
-    entry:entrys,
+    entry:{
+        main:'./src/main.js'
+    },
     output:{
         filename:'[name].js',
         chunkFilename: '[name].chunk.js',//异步加载文件名称
@@ -49,37 +50,17 @@ let config = {
     },
     plugins:[
        new CleanWebpackPlugin(),
-       new MiniCssExtractPlugin()
+       new MiniCssExtractPlugin(),
+       new HtmlWebpackPlugin({
+         filename:"index.html",
+         template:"./public/index.html",
+         chunks:['main']
+       })
     ]
 }
-let entryName = Object.keys(entrys);
-/**
- * 处理文件夹下html模板
- */
-entryName.forEach((pathname)=>{
-    let params = {
-        filename:pathname + '.html', //文件名
-        template:entrys[pathname].replace(/js/,'html'), //html模板来源 
-        chunks:[pathname]//默认会引入entry中全部的js,写了就只会引入a.js
-    }
-    config.plugins.push(new HtmlWebpackPlugin(params));
-})
 
 
-/**
- * 处理文件夹下所有入口文件
- */
-function getEntryPath(){
-    let files = glob.sync('vues/**/*.js');
-    let entries = {};
-    for(let i = 0 ; i < files.length ; i++){
-        let entry = files[i];
-        let extandName = path.extname(entry);
-        let entryName = path.basename(entry,extandName);
-        entries[entryName] = './'+ entry;
-    }
-    return entries;
-}
+
 module.exports = config;
 
 

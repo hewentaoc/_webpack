@@ -13,7 +13,7 @@ let devModule = {
         rules:[
             {
                 test:/\.js$/,
-                use:['cache-loader','babel-loader']
+                use:['cache-loader','babel-loader']//优化打包时间
             }
         ]
     }

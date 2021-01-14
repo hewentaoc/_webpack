@@ -6,7 +6,8 @@
   "scripts": {
     "server": "webpack-dev-server --config build/webpack.dev.js --env.publicPath server",
     "dev": "webpack --config build/webpack.dev.js --env.publicPath dev",
-    "build": "webpack --config build/webpack.prod.js"
+    "build": "webpack --config build/webpack.prod.js",
+    "config": "webpack --config build/webpack.config.js --mode development"
   },
   "author": "",
   "license": "ISC",
@@ -35,5 +36,10 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.1",
     "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
+    "vue": "^2.6.12"
   }
 }

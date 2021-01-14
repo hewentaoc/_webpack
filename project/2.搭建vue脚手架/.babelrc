@@ -4,7 +4,8 @@
       "useBuiltIns":false,//不对es6新的Api进行解析
       // "useBuiltIns": "usage",//对新的Api进行解析
       "corejs": 3
-    }]
+    }],
+    "@vue/babel-preset-jsx"
  ],
  "plugins": [
   //  "@babel/plugin-proposal-class-properties",//编译es7的语法,class中私有属性定义
