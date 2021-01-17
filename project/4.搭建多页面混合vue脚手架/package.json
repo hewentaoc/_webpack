@@ -6,8 +6,7 @@
   "scripts": {
     "server": "webpack-dev-server --config build/webpack.dev.js --env.publicPath server",
     "dev": "webpack --config build/webpack.dev.js --env.publicPath dev",
-    "build": "webpack --config build/webpack.prod.js",
-    "config": "webpack --config build/webpack.config.js --mode development"
+    "build": "webpack --config build/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
@@ -28,18 +27,16 @@
     "less": "^4.1.0",
     "less-loader": "^7.2.1",
     "mini-css-extract-plugin": "^1.3.3",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "regenerator-runtime": "^0.13.3",
     "style-loader": "^1.2.1",
-    "terser-webpack-plugin": "^4.2.2",
     "url-loader": "^4.1.0",
-    "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12",
     "webpack": "^4.44.2",
     "webpack-bundle-analyzer": "^4.3.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.1",
     "webpack-merge": "^5.7.3",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "@vue/babel-preset-jsx": "^1.2.4"
   },
