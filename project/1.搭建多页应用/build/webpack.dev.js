@@ -36,7 +36,7 @@ let devConfig = {
     output: {
         filename: '[name].js',
         chunkFilename: '[name].chunk.js', //异步加载文件名称
-        publicPath: argv.env == 'dev' ? '' : '/dist/', //公共路径
+        // publicPath: argv.env == 'dev' ? '' : '/dist/', //公共路径
     },
     devServer: {
         port: 8000,

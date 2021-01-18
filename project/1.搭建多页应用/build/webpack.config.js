@@ -60,7 +60,8 @@ entryName.forEach((pathname)=>{
     let params = {
         filename:pathname + '.html', //文件名
         template:entrys[pathname].replace(/js/,'html'), //html模板来源 
-        chunks:[pathname]//默认会引入entry中全部的js,写了就只会引入a.js
+        chunks:[pathname],//默认会引入entry中全部的js,写了就只会引入a.js
+        // inject:'body'//默认值true 代表script标签位于html文件的 body 底部
     }
     config.plugins.push(new HtmlWebpackPlugin(params));
 })
