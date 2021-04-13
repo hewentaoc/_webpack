@@ -4,11 +4,16 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 打包css文件 
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const glob = require('glob');
+const globAll = require('glob-all');
 let rootPath = path.resolve('./');//根目录－node运行的目录
 const entrys = getEntryPath('vues/**/*.js')
 let files = glob.sync('vues/**/*.js');
 let htmlPath = [];
+const PATHS = {
+    src: path.join(__dirname, '../vues')
+}
 console.log(files)
 let config = {
     entry:entrys,
@@ -57,9 +62,33 @@ let config = {
        new CleanWebpackPlugin(),
        new MiniCssExtractPlugin(),
        new VueLoaderPlugin(),
+       new PurgecssPlugin({//进行css-tree-shaking
+        // paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
+        // paths: glob.sync(`${PATHS.src}/**/*.js`,  { nodir: true }),
+        // paths: glob.sync(`${PATHS.src}/**/*.vue`,  { nodir: true }),
+        paths: globAll.sync([
+            `${PATHS.src}/**/*.js`,
+            `${PATHS.src}/**/*.vue`,
+        ]),
+        // paths: globAll.sync([
+        //     `${PATHS.src}/**/*`,
+        // ],{ nodir: true }),
+        // whitelist: ["html", "body"],
+        // whitelistPatterns: [/el-.*/],
+        // whitelistPatternsChildren: [/^token/, /^pre/, /^code/]
+       })
     ]
 }
-console.log(8888,entrys)
+// path.join(__dirname, './src/**/*.js'),
+// path.join(__dirname, './src/**/*.vue'),
+// const result = glob.sync(`${path.resolve(__dirname, '../vues')}/**/*.js`, {
+//     nodir: true,
+// });
+const result =  globAll.sync([
+    `${PATHS.src}/**/*.js`,
+    `${PATHS.src}/**/*.vue`,
+])
+console.log(8888,result)
 let entryName = Object.keys(entrys);
 /**
  * 处理文件夹下html模板

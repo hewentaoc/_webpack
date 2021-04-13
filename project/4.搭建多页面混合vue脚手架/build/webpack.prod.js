@@ -17,7 +17,7 @@ const prodConfig = {
       },
     },
   },
-  plugins: [new WebpackBundleAnalyzer()],
+  // plugins: [new WebpackBundleAnalyzer()],
 };
 
 module.exports = merge(baseConfig, prodConfig);

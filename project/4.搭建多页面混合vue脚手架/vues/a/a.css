@@ -3,3 +3,7 @@ body {
     margin: 30px auto;
     background-image: url(./img/web.png);
 }
+
+.hwt {
+    background-color: red;
+}
