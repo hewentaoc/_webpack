@@ -8,6 +8,7 @@ const glob = require('glob');
 let rootPath = path.resolve('./');//根目录－node运行的目录
 const entrys = getEntryPath('vues/**/*.js')
 let files = glob.sync('vues/**/*.js');
+let htmlPath = [];
 console.log(files)
 let config = {
     entry:entrys,
@@ -58,6 +59,7 @@ let config = {
        new VueLoaderPlugin(),
     ]
 }
+console.log(8888,entrys)
 let entryName = Object.keys(entrys);
 /**
  * 处理文件夹下html模板
@@ -68,6 +70,7 @@ entryName.forEach((pathname)=>{
         template:entrys[pathname].replace(/js/,'html'), //html模板来源 
         chunks:[pathname]//默认会引入entry中全部的js,写了就只会引入a.js
     }
+    console.log(666,params)
     config.plugins.push(new HtmlWebpackPlugin(params));
 })
 

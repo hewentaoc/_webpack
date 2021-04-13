@@ -1,5 +1,4 @@
 const {merge,mergeWithRules} = require("webpack-merge");
-import Vue from 'vue'
 const baseConfig = require("./webpack.config.js");
 const argv = require('yargs').argv; //获取packjson中传递的参数
 console.log(argv.env)
